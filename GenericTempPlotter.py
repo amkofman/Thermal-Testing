@@ -1,16 +1,17 @@
 #Code for plotting thermocouple readout vs. time for two thermocouples
-#Anna Kofman & Lina Florez
+#Anna Kofman
 #May 17, 2017
 
 import numpy as np
 import matplotlib.pyplot as plt
 
-"""ENTER ALL NECESSARY DATA HERE"""
+###*******  ENTER ALL NECESSARY DATA HERE  *********###
 disk_path = #ENTER PATH TO DISK DATA HERE
 stand_path = #ENTER PATH TO STAND DATA HERE
 plot_title = #ENTER THE TITLE OF THE PLOT YOU WANT TO CREATE
 x_label = #ENTER X-AXIS LABEL
 y_Label = #ENTER Y_AXIS LABEL
+type_of_stand = #ENTER MATERIAL STAND IS MADE FROM
 
 
 #initiate necessary arrays
@@ -54,7 +55,7 @@ fig, ax = plt.subplots()
 
 
 ax.plot(disk_time_mins,disk_temp, lw = 2, label = "Disk")
-
+stand = type_of_stand + " Stand"
 ax.plot(stand_time_mins,stand_temp, lw = 2, label = "Stand")
 
 ax.minorticks_on()
