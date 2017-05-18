@@ -33,7 +33,7 @@ for line in open(disk_path, 'r'):
     disk_temp.append(float(line[1]))
     
 #iterates through lines in stand file
-for line in open(stand_path, "r"):
+for line in open(stand_path, 'r'):
     #splits the lines on spaces
     line = line.split()
     #appends the time value from each line to the corresponding time array
@@ -53,15 +53,16 @@ for a in stand_time_secs:
 #create the fig and ax objects
 fig, ax = plt.subplots()
 
-
+#plots the disk data and then the stand data
 ax.plot(disk_time_mins,disk_temp, lw = 2, label = "Disk")
 stand = type_of_stand + " Stand"
-ax.plot(stand_time_mins,stand_temp, lw = 2, label = "Stand")
+ax.plot(stand_time_mins,stand_temp, lw = 2, label = stand)
 
+#adding all the necessary plot information
 ax.minorticks_on()
-plt.title('Temperature vs. Time')
-plt.xlabel('Time (mins)')
-plt.ylabel('Temperature (K)')
+plt.title(plot_title)
+plt.xlabel(x_label)
+plt.ylabel(y_label)
 plt.legend(loc = 'best')
 plt.show()
 
