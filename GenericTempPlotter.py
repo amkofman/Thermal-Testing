@@ -25,10 +25,10 @@ stand_temp = []
 
 #iterates through lines in disk file
 for line in open(disk_path, 'r'):
-    #splits the lines on spaces
-    line = line.split()
     #check if you are still in the header
-    if line[0] == '0.000000':
+    if re.match(r"^\d+.*$",line):
+        #splits the lines on spaces
+        line = line.split()
         #appends the time value from each line to the corresponding time array
         disk_time_secs.append(float(line[0]))
         #appends the temp value from each line to the corresponding temp array
@@ -36,10 +36,10 @@ for line in open(disk_path, 'r'):
     
 #iterates through lines in stand file
 for line in open(stand_path, 'r'):
-    #splits the lines on spaces
-    line = line.split()
     #check if you are still in the header
-    if line[0] == '0.000000':
+    if re.match(r"^\d+.*$",line):
+        #splits the lines on spaces
+        line = line.split()
         #appends the time value from each line to the corresponding time array
         stand_time_secs.append(float(line[0]))
         #appends the temp value from each line to the corresponding temp array
