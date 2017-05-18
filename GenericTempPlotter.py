@@ -62,6 +62,10 @@ ax.plot(disk_time_mins,disk_temp, lw = 2, label = "Disk")
 stand = type_of_stand + " Stand"
 ax.plot(stand_time_mins,stand_temp, lw = 2, label = stand)
 
+#finding min and max for disk
+print('Min Temp of Disk: {0}'.format(min(disk_temp)))
+print('Min Temp of Stand: {0}'.format(max(stand_temp)))
+
 #adding all the necessary plot information
 ax.minorticks_on()
 plt.title(plot_title)
